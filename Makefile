@@ -2,10 +2,9 @@ FILES=$(shell ls)
 
 all: update
 update:
-	echo $(FILES)
 	git pull
 
-commit:
+commit: $(FILES)
 	git add .
 	git commit -m "change"
 	git push
