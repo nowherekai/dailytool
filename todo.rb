@@ -15,6 +15,7 @@ class ToDO
 
   def push(msg)
     @file.puts("[#{@count}.]" + msg)
+    `make commit`
   end
 
   def pop(listnum)
@@ -27,6 +28,8 @@ class ToDO
     end
   end
 end
+
+`make update`
 
 t = ToDO.new
 if ARGV[0] == 'push'
