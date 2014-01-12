@@ -1,11 +1,11 @@
 FILES=$(shell ls)
 
 all: update
-update:
+update: $(FILES)
 	git pull
 
 commit: $(FILES)
-	touch target.commit
+	touch commit
 	git add .
 	git commit -m "change"
 	git push
