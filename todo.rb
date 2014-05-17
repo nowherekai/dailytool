@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-FILENAME = 'todo.list'
+FILENAME = '/code/dailytool/todo.list'
 class ToDO
   def initialize
     unless File.file? FILENAME
@@ -15,7 +15,7 @@ class ToDO
 
   def push(msg)
     @file.puts("[#{@count}.]" + msg)
-    `make commit`
+    # `make commit`
   end
 
   def pop(listnum)
@@ -29,12 +29,12 @@ class ToDO
   end
 end
 
-`make update`
+# `make update`
 
 t = ToDO.new
 if ARGV[0] == 'push'
   if ARGV.length > 1
-    t.push(ARGV[1..-1].join)
+    t.push(ARGV[1..-1].join(" "))
   end
 elsif ARGV[0] == 'list'
   t.list

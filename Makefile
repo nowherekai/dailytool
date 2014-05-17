@@ -1,7 +1,6 @@
 FILES=$(shell ls)
 
 update: $(FILES)
-	touch update
 	git pull
 
 commit: $(FILES)
